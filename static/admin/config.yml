@@ -5,6 +5,12 @@ backend:
 media_folder: static/img
 public_folder: /img
 
+media_library:
+  name: cloudinary
+  config:
+    cloud_name: nate-blog
+    api_key: 793315592381787
+
 collections:
   - name: "blog"
     label: "Blog"
