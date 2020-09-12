@@ -2,9 +2,6 @@ backend:
   name: git-gateway
   branch: master
 
-media_folder: static/img
-public_folder: /img
-
 media_library:
   name: cloudinary
   config:
@@ -13,7 +10,7 @@ media_library:
 
 collections:
   - name: "blog"
-    label: "Blog"
+    label: "Blog Post"
     folder: "content/blog"
     create: true
     slug: "index"
@@ -25,5 +22,6 @@ collections:
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Cover Image", name: "image", widget: "image" }
       - { label: "Description", name: "description", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown" }
