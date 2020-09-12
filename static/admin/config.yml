@@ -10,13 +10,12 @@ media_library:
 
 collections:
   - name: "blog"
-    label: "Blog Post"
+    label: "Blog Posts"
+    label_singular: "Blog Post"
     folder: "content/blog"
     create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{title}}-2"
-    media_folder: ""
-    public_folder: ""
-    path: "{{year}}-{{month}}-{{day}}-{{title}}"
+    slug: "{{slug}}"
+    path: "{{title}}"
     editor:
       preview: false
     fields:
