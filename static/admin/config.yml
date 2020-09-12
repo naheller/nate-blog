@@ -13,10 +13,10 @@ collections:
     label: "Blog Post"
     folder: "content/blog"
     create: true
-    slug: "index"
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     media_folder: ""
     public_folder: ""
-    path: "{{title}}/index"
+    path: "{{title}}"
     editor:
       preview: false
     fields:
