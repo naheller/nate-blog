@@ -15,10 +15,10 @@ const BlogIndex = ({ data, location }) => {
       <SEO title="All posts" />
       <Bio />
       {posts.map(({ node }) => {
-        const title = node.frontmatter.title || node.fields.slug
+        const title = node.frontmatter.title || node.frontmatter.slug
         return (
           <article
-            key={node.fields.slug}
+            key={node.frontmatter.slug}
             itemScope
             itemType="http://schema.org/Article"
           >
@@ -30,7 +30,7 @@ const BlogIndex = ({ data, location }) => {
               >
                 <Link
                   style={{ boxShadow: `none` }}
-                  to={node.fields.slug}
+                  to={node.frontmatter.slug}
                   itemProp="url"
                 >
                   <span itemProp="headline">{title}</span>
@@ -66,9 +66,6 @@ export const pageQuery = graphql`
       edges {
         node {
           excerpt
-          fields {
-            slug
-          }
           frontmatter {
             date(formatString: "MMMM DD, YYYY")
             title
