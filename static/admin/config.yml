@@ -14,13 +14,22 @@ collections:
     label_singular: "Blog Post"
     folder: "content/blog"
     create: true
-    slug: "{{slug}}"
-    path: "{{title}}"
+    slug: "{{year}}-{{month}}-{{day}}-{{fields.slug}}"
     editor:
       preview: false
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Cover Image", name: "image", widget: "image" }
+      - {
+          label: "Slug",
+          name: "slug",
+          widget: "string",
+          pattern:
+            [
+              "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+              "A slug can have no spaces or special characters",
+            ],
+        }
       - { label: "Description", name: "description", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown" }
