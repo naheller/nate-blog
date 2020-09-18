@@ -38,6 +38,6 @@ collections:
           label: "Description",
           name: "description",
           widget: "text",
-          pattern: [".{1,160}", "Cannot exceed 160 characters"],
+          pattern: ["^.{1,160}$", "Cannot exceed 160 characters"],
         }
       - { label: "Body", name: "body", widget: "markdown" }
