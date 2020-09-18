@@ -20,7 +20,6 @@ collections:
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
-      - { label: "Cover Image", name: "image", widget: "image" }
       - {
           label: "Slug",
           name: "slug",
@@ -28,8 +27,15 @@ collections:
           pattern:
             [
               "^[a-z0-9]+(?:-[a-z0-9]+)*$",
-              "A slug can have no spaces or special characters",
+              "Cannot have spaces or special characters",
             ],
         }
-      - { label: "Description", name: "description", widget: "string" }
+      - {
+          label: "Description",
+          name: "description",
+          widget: "text",
+          pattern: [".{,160}", "Cannot exceed 160 characters"],
+        }
+      - { label: "Tags", label_singular: "Tag", name: "tags", widget: "list" }
+      - { label: "Cover Image", name: "image", widget: "image" }
       - { label: "Body", name: "body", widget: "markdown" }
