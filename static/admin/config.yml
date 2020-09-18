@@ -1,3 +1,5 @@
+publish_mode: editorial_workflow
+
 backend:
   name: git-gateway
   branch: master
@@ -30,12 +32,12 @@ collections:
               "Cannot have spaces or special characters",
             ],
         }
+      - { label: "Tags", label_singular: "Tag", name: "tags", widget: "list" }
+      - { label: "Cover Image", name: "image", widget: "image" }
       - {
           label: "Description",
           name: "description",
           widget: "text",
-          pattern: [".{,160}", "Cannot exceed 160 characters"],
+          pattern: [".{1,160}", "Cannot exceed 160 characters"],
         }
-      - { label: "Tags", label_singular: "Tag", name: "tags", widget: "list" }
-      - { label: "Cover Image", name: "image", widget: "image" }
       - { label: "Body", name: "body", widget: "markdown" }
