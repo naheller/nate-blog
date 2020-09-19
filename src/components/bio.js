@@ -40,6 +40,7 @@ const Bio = () => {
     <div
       style={{
         display: `flex`,
+        alignItems: `center`,
         marginBottom: rhythm(2.5),
       }}
     >
@@ -56,12 +57,13 @@ const Bio = () => {
           borderRadius: `50%`,
         }}
       />
-      <p>
-        Written by <strong>{author.name}</strong> {author.summary}
-        {` `}
-        <a href={`https://twitter.com/${social.twitter}`}>
-          You should follow him on Twitter
-        </a>
+      <p style={{ marginBottom: 0 }}>
+        Written by{" "}
+        <strong>
+          <a href={`https://twitter.com/${social.twitter}`} target="_blank">
+            {author.name}
+          </a>
+        </strong>
       </p>
     </div>
   )

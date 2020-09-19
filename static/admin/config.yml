@@ -21,7 +21,8 @@ collections:
       preview: false
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Date Published", name: "datePublished", widget: "datetime" }
+      - { label: "Date Modified", name: "dateModified", widget: "datetime" }
       - {
           label: "Slug",
           name: "slug",
@@ -33,7 +34,7 @@ collections:
             ],
         }
       - { label: "Tags", label_singular: "Tag", name: "tags", widget: "list" }
-      - { label: "Cover Image", name: "image", widget: "image" }
+      - { label: "Header Image", name: "headerImage", widget: "image" }
       - {
           label: "Description",
           name: "description",

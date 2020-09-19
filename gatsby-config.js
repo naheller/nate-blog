@@ -1,14 +1,16 @@
+require("dotenv").config()
+
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
+    title: `Nate.js`,
     author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`,
+      name: `Nathan Heller`,
+      summary: `I'm a UI Engineer based in New York City.`,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.app/`,
+    description: `Nathan Heller's personal site and blog.`,
+    siteUrl: `https://natejs.com/`,
     social: {
-      twitter: `kylemathews`,
+      twitter: `@natexyz`,
     },
   },
   plugins: [

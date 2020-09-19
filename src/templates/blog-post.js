@@ -5,20 +5,33 @@ import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm, scale } from "../utils/typography"
+import addUrlOptimization from "../utils/addUrlOptimization"
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.markdownRemark
   const siteTitle = data.site.siteMetadata.title
   const { previous, next } = pageContext
 
+  const updatedHtml = addUrlOptimization(post.html)
+  post.html = updatedHtml
+
   return (
     <Layout location={location} title={siteTitle}>
       <SEO
         title={post.frontmatter.title}
+        datePublished={post.frontmatter.datePublished}
+        dateModified={post.frontmatter.dateModified}
         description={post.frontmatter.description || post.excerpt}
+        headerImage={post.frontmatter.headerImage}
+        slug={post.frontmatter.slug}
       />
-      <article itemScope itemType="http://schema.org/Article">
+      <article>
         <header>
+          <img
+            src={addUrlOptimization(post.frontmatter.headerImage)}
+            style={{ margin: 0 }}
+            alt=""
+          />
           <h1
             itemProp="headline"
             style={{
@@ -35,7 +48,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
               marginBottom: rhythm(1),
             }}
           >
-            {post.frontmatter.date}
+            {post.frontmatter.datePublished}
           </p>
         </header>
         <section
@@ -97,7 +110,9 @@ export const pageQuery = graphql`
       html
       frontmatter {
         title
-        date(formatString: "MMMM DD, YYYY")
+        datePublished
+        dateModified
+        headerImage
         description
         slug
       }
