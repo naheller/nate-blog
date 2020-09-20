@@ -1,20 +1,14 @@
-/**
- * SEO component that queries for data with
- *  Gatsby's useStaticQuery React hook
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
-
 import React from "react"
 import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 import addUrlOptimization from "../utils/addUrlOptimization"
 
+const PAGE_BASE_URL = "https://natejs.com/"
 const AUTHOR_IMAGE_URL =
   "https://res.cloudinary.com/nate-blog/image/upload/v1600488872/nate_ckldzj.jpg"
 
-const SEO = ({
+const BlogPostSEO = ({
   lang,
   meta,
   title,
@@ -48,12 +42,17 @@ const SEO = ({
   const ldJson = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    mainEntityOfPage: `https://natejs.com/${slug}`,
+    mainEntityOfPage: `${PAGE_BASE_URL}${slug}`,
     headline: title,
     image: addUrlOptimization(headerImage),
     datePublished,
     dateModified,
     author: {
+      "@type": "Person",
+      name: site.siteMetadata.author.name,
+      image: addUrlOptimization(AUTHOR_IMAGE_URL),
+    },
+    publisher: {
       "@type": "Person",
       name: site.siteMetadata.author.name,
       image: addUrlOptimization(AUTHOR_IMAGE_URL),
@@ -75,10 +74,6 @@ const SEO = ({
         {
           name: `author`,
           content: site.siteMetadata.author.name,
-        },
-        {
-          name: `viewport`,
-          content: `width=device-width, initial-scale=1`,
         },
         {
           property: `og:title`,
@@ -118,12 +113,13 @@ const SEO = ({
         },
       ].concat(meta)}
     >
+      <link rel="canonical" href={`${PAGE_BASE_URL}${slug}/`} />
       <script type="application/ld+json">{JSON.stringify(ldJson)}</script>
     </Helmet>
   )
 }
 
-SEO.defaultProps = {
+BlogPostSEO.defaultProps = {
   lang: `en`,
   meta: [],
   description: ``,
@@ -133,7 +129,7 @@ SEO.defaultProps = {
   dateModified: ``,
 }
 
-SEO.propTypes = {
+BlogPostSEO.propTypes = {
   lang: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string.isRequired,
@@ -144,4 +140,4 @@ SEO.propTypes = {
   dateModified: PropTypes.string,
 }
 
-export default SEO
+export default BlogPostSEO

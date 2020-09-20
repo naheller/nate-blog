@@ -1,10 +1,8 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 
-import Bio from "../components/bio"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import { rhythm } from "../utils/typography"
+import Bio from "../components/Bio"
+import Layout from "../components/Layout"
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title
@@ -12,7 +10,6 @@ const BlogIndex = ({ data, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <SEO title="All posts" />
       <Bio />
       {posts.map(({ node }) => {
         const title = node.frontmatter.title || node.frontmatter.slug
@@ -23,16 +20,8 @@ const BlogIndex = ({ data, location }) => {
             itemType="http://schema.org/Article"
           >
             <header>
-              <h3
-                style={{
-                  marginBottom: rhythm(1 / 4),
-                }}
-              >
-                <Link
-                  style={{ boxShadow: `none` }}
-                  to={node.frontmatter.slug}
-                  itemProp="url"
-                >
+              <h3>
+                <Link to={node.frontmatter.slug} itemProp="url">
                   <span itemProp="headline">{title}</span>
                 </Link>
               </h3>
