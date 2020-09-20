@@ -4,7 +4,8 @@ import { graphql } from "gatsby"
 import Bio from "../components/Bio"
 import Layout from "../components/Layout"
 import SEO from "../components/BlogPostSEO"
-import addUrlOptimization from "../utils/addUrlOptimization"
+import { addUrlOptimization } from "../utils/cloudinary"
+import { getFormattedDate } from "../utils/date"
 
 const BlogPostTemplate = ({ data, /* pageContext, */ location }) => {
   const post = data.markdownRemark
@@ -24,11 +25,11 @@ const BlogPostTemplate = ({ data, /* pageContext, */ location }) => {
         headerImage={post.frontmatter.headerImage}
         slug={post.frontmatter.slug}
       />
-      <article>
+      <article className="prose lg:prose-xl">
         <header>
           <img src={addUrlOptimization(post.frontmatter.headerImage)} alt="" />
           <h1 itemProp="headline">{post.frontmatter.title}</h1>
-          <p>{post.frontmatter.datePublished}</p>
+          <p>{getFormattedDate(post.frontmatter.datePublished)}</p>
         </header>
         <section dangerouslySetInnerHTML={{ __html: post.html }} />
         <hr />

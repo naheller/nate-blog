@@ -2,7 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
-import addUrlOptimization from "../utils/addUrlOptimization"
+import { addUrlOptimization } from "../utils/cloudinary"
 
 const PAGE_BASE_URL = "https://natejs.com/"
 const AUTHOR_IMAGE_URL =

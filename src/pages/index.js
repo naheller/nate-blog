@@ -3,6 +3,7 @@ import { Link, graphql } from "gatsby"
 
 import Bio from "../components/Bio"
 import Layout from "../components/Layout"
+import { getFormattedDate } from "../utils/date"
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title
@@ -25,7 +26,7 @@ const BlogIndex = ({ data, location }) => {
                   <span itemProp="headline">{title}</span>
                 </Link>
               </h3>
-              <small>{node.frontmatter.datePublished}</small>
+              <small>{getFormattedDate(node.frontmatter.datePublished)}</small>
             </header>
             <section>
               <p
