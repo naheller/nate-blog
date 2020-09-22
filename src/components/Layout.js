@@ -3,11 +3,11 @@ import { Link } from "gatsby"
 
 const Layout = ({ /* location, */ title, children }) => {
   return (
-    <div className="m-auto max-w-2xl">
+    <div>
       <header>
-        <h3>
+        {/* <h3>
           <Link to={`/`}>{title}</Link>
-        </h3>
+        </h3> */}
       </header>
       <main>{children}</main>
       <footer>

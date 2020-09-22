@@ -7,7 +7,7 @@ const Bio = () => {
     query BioQuery {
       avatar: file(absolutePath: { regex: "/profile-pic.jpg/" }) {
         childImageSharp {
-          fixed(width: 150, height: 150) {
+          fixed(width: 175, height: 175) {
             ...GatsbyImageSharpFixed
           }
         }
@@ -29,26 +29,44 @@ const Bio = () => {
   const { author, social } = data.site.siteMetadata
 
   return (
-    <div>
+    <div className="py-4 px-5 border border-2 rounded-lg text-gray-700 bg-gray-100">
       <Image
         fixed={data.avatar.childImageSharp.fixed}
-        className="rounded-full"
+        className="rounded-full mx-auto mb-4"
+        style={{ display: "block" }}
         alt={author.name}
       />
-      <p>
-        Written by{" "}
-        <strong>
-          <a
-            href={`https://twitter.com/${social.twitter}`}
-            target="_blank"
-            rel="noreferrer"
-          >
-            {author.name}
-          </a>
-        </strong>
-      </p>
+      <div>
+        <p className="mb-2">
+          I'm Nate, a software engineer based in New York City. This blog
+          explores topics in web development (and coffee).
+        </p>
+        <p>I hope you find something that interests you!</p>
+      </div>
     </div>
   )
+
+  // return (
+  //   <div>
+  //     <Image
+  //       fixed={data.avatar.childImageSharp.fixed}
+  //       className="rounded-full"
+  //       alt={author.name}
+  //     />
+  //     <p>
+  //       Written by{" "}
+  //       <strong>
+  //         <a
+  //           href={`https://twitter.com/${social.twitter}`}
+  //           target="_blank"
+  //           rel="noreferrer"
+  //         >
+  //           {author.name}
+  //         </a>
+  //       </strong>
+  //     </p>
+  //   </div>
+  // )
 }
 
 export default Bio

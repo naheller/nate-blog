@@ -6,6 +6,7 @@ import Layout from "../components/Layout"
 import SEO from "../components/BlogPostSEO"
 import { addUrlOptimization } from "../utils/cloudinary"
 import { getFormattedDate } from "../utils/date"
+import CalendarIcon from "../components/icons/Calendar"
 
 const BlogPostTemplate = ({ data, /* pageContext, */ location }) => {
   const post = data.markdownRemark
@@ -25,18 +26,39 @@ const BlogPostTemplate = ({ data, /* pageContext, */ location }) => {
         headerImage={post.frontmatter.headerImage}
         slug={post.frontmatter.slug}
       />
-      <article className="prose lg:prose-xl">
-        <header>
-          <img src={addUrlOptimization(post.frontmatter.headerImage)} alt="" />
-          <h1 itemProp="headline">{post.frontmatter.title}</h1>
-          <p>{getFormattedDate(post.frontmatter.datePublished)}</p>
-        </header>
-        <section dangerouslySetInnerHTML={{ __html: post.html }} />
-        <hr />
-        <footer>
+      <div
+        style={{
+          backgroundImage: `url("${addUrlOptimization(
+            post.frontmatter.headerImage
+          )}")`,
+          backgroundSize: "100%",
+        }}
+        className="h-64 bg-fixed bg-no-repeat"
+        alt=""
+      />
+      <div className="flex flex-col justify-between lg:flex-row max-w-6xl mx-auto p-8">
+        <article className="prose lg:prose-xl mr-8">
+          <div>
+            <header>
+              <h1 itemProp="headline">{post.frontmatter.title}</h1>
+              <time
+                className="max-content flex items-center bg-gray-100 border rounded-full px-3 py-1"
+                datetime={post.frontmatter.datePublished}
+              >
+                <CalendarIcon className="w-4 h-4 mr-2" />
+                <span className="text-sm text-gray-700">
+                  {getFormattedDate(post.frontmatter.datePublished)}
+                </span>
+              </time>
+            </header>
+            <section dangerouslySetInnerHTML={{ __html: post.html }} />
+            <hr />
+          </div>
+        </article>
+        <aside className="w-64 sticky">
           <Bio />
-        </footer>
-      </article>
+        </aside>
+      </div>
     </Layout>
   )
 }
