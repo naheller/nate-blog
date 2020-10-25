@@ -1,7 +1,7 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 
-import Bio from "../components/Bio"
+import CalendarIcon from "../components/icons/Calendar"
 import Layout from "../components/Layout"
 import { getFormattedDate } from "../utils/date"
 
@@ -11,7 +11,7 @@ const BlogIndex = ({ data, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <Bio />
+      {/* <Bio /> */}
       {posts.map(({ node }) => {
         const title = node.frontmatter.title || node.frontmatter.slug
         return (
@@ -21,19 +21,24 @@ const BlogIndex = ({ data, location }) => {
             itemType="http://schema.org/Article"
           >
             <header>
-              <h3>
-                <Link to={node.frontmatter.slug} itemProp="url">
-                  <span itemProp="headline">{title}</span>
-                </Link>
-              </h3>
-              <small>{getFormattedDate(node.frontmatter.datePublished)}</small>
+              <h2 className="text-2xl font-bold mb-3">
+                <Link to={node.frontmatter.slug}>{title}</Link>
+              </h2>
+              <time
+                className="flex max-content items-center bg-gray-200 border-l-4 border-teal-500 pl-2 pr-3 py-1 mr-4 mb-4 text-sm text-gray-700"
+                datetime={node.frontmatter.datePublished}
+              >
+                <CalendarIcon width="1rem" height="1rem" className="mr-2" />
+                <span className="text-sm">
+                  {getFormattedDate(node.frontmatter.datePublished)}
+                </span>
+              </time>
             </header>
             <section>
               <p
                 dangerouslySetInnerHTML={{
                   __html: node.frontmatter.description || node.excerpt,
                 }}
-                itemProp="description"
               />
             </section>
           </article>

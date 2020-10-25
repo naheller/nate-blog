@@ -4,16 +4,20 @@ import { Link } from "gatsby"
 const Layout = ({ /* location, */ title, children }) => {
   return (
     <div>
-      <header>
-        {/* <h3>
-          <Link to={`/`}>{title}</Link>
-        </h3> */}
+      <header className="w-full bg-teal-500">
+        <div className="flex max-w-3xl lg:max-w-6xl h-14 mx-auto px-8 items-center">
+          <Link to="/">
+            <span className="text-lg text-white font-bold">Nate.js</span>
+          </Link>
+        </div>
       </header>
-      <main>{children}</main>
-      <footer>
-        © {new Date().getFullYear()}, Built with
-        {` `}
-        <a href="https://www.gatsbyjs.org">Gatsby</a>
+      <main className="main-wrapper max-w-3xl lg:max-w-6xl mx-auto p-8">
+        {children}
+      </main>
+      <footer className="w-full bg-teal-500">
+        <div className="flex max-w-3xl lg:max-w-6xl h-14 mx-auto px-8 items-center">
+          <span className="text-lg text-white font-bold">Nate.js</span>
+        </div>
       </footer>
     </div>
   )

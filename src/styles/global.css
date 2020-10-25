@@ -5,13 +5,36 @@
 @tailwind utilities;
 
 @layer utilities {
+  .h-14 {
+    height: 3.5rem;
+  }
+
   .max-content {
     width: max-content;
   }
+}
+
+html,
+body,
+#___gatsby,
+#gatsby-focus-wrapper {
+  height: 100%;
+}
+
+.main-wrapper {
+  min-height: calc(100vh - 7rem);
 }
 
 .blog-post-header-image {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+}
+
+.prose {
+  max-width: none;
+}
+
+pre {
+  border-radius: 0;
 }
