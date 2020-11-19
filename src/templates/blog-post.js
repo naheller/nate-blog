@@ -49,7 +49,7 @@ const BlogPostTemplate = ({ data, /* pageContext, */ location }) => {
         alt=""
       /> */}
       <div className="flex flex-col justify-between lg:flex-row">
-        <article className="prose lg:prose-xl mx-auto lg:mr-8 lg:ml-0">
+        <article className="prose lg:prose-xl mx-auto">
           <div>
             {/* <img
               src={addUrlOptimization(headerImage)}
@@ -57,12 +57,15 @@ const BlogPostTemplate = ({ data, /* pageContext, */ location }) => {
             /> */}
             <header>
               <h1>{title}</h1>
-              <div className="flex flex-wrap">
-                <div className="lg:hidden flex max-content items-center bg-gray-200 border-l-4 border-teal-500 pl-2 pr-3 py-1 mr-4 mb-4 text-sm text-gray-700">
+              {/* <div className="flex flex-wrap"> */}
+              <time className="italic text-teal-500" datetime={datePublished}>
+                {getFormattedDate(datePublished)}
+              </time>
+              {/* <div className="flex max-content items-center bg-gray-200 border-l-4 border-teal-500 pl-2 pr-3 py-1 mr-4 mb-4 text-sm text-gray-700">
                   <UserIcon width="1rem" height="1rem" className="mr-1" />
                   <span className="text-sm">Nathan Heller</span>
-                </div>
-                <time
+                </div> */}
+              {/* <time
                   className="flex max-content items-center bg-gray-200 border-l-4 border-teal-500 pl-2 pr-3 py-1 mr-4 mb-4 text-sm text-gray-700"
                   datetime={datePublished}
                 >
@@ -77,7 +80,7 @@ const BlogPostTemplate = ({ data, /* pageContext, */ location }) => {
                     <span className="text-sm">{tag}</span>
                   </div>
                 ))}
-              </div>
+              </div> */}
               {/* <div className="flex flex-wrap">
                 {tags.map(tag => (
                   <div className="flex max-content items-center bg-gray-200 border-l-4 border-teal-500 pl-2 pr-3 py-1 mr-4 mb-2 text-sm text-gray-700">
@@ -97,9 +100,9 @@ const BlogPostTemplate = ({ data, /* pageContext, */ location }) => {
             <hr />
           </div>
         </article>
-        <aside className="lg:w-64 flex-shrink-0 m-auto lg:m-0 max-w-3xl">
+        {/* <aside className="lg:w-64 flex-shrink-0 m-auto lg:m-0 max-w-3xl">
           <Bio />
-        </aside>
+        </aside> */}
       </div>
     </Layout>
   )

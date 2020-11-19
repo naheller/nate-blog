@@ -8,6 +8,9 @@ module.exports = {
     content: ["./src/**/*.html", "./src/**/*.js"],
   },
   theme: {
+    fontFamily: {
+      'serif': ["Vollkorn", "Georgia", "serif"],
+    },
     extend: {},
   },
   variants: {},

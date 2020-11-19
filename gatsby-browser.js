@@ -1,6 +1,5 @@
 // custom typefaces
-import "typeface-montserrat"
-import "typeface-merriweather"
+import "typeface-vollkorn"
 
 import "prismjs/themes/prism-okaidia.css"
 import "./src/styles/global.css"

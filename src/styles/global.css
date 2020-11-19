@@ -21,8 +21,26 @@ body,
   height: 100%;
 }
 
+a {
+  color: #38b2ac !important;
+  text-decoration: none !important;
+}
+
+h2 > a {
+  color: initial !important;
+}
+
+a:hover {
+  text-decoration: underline !important;
+  filter: brightness(90%);
+}
+
 .main-wrapper {
   min-height: calc(100vh - 7rem);
+}
+
+.blog-index h2:first-of-type {
+  margin-top: 0;
 }
 
 .blog-post-header-image {

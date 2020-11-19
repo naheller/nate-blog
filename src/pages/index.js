@@ -10,36 +10,35 @@ const BlogIndex = ({ data, location }) => {
   const posts = data.allMarkdownRemark.edges
 
   return (
-    <Layout location={location} title={siteTitle}>
+    <Layout location={location} title={siteTitle} className="blog-index">
       {/* <Bio /> */}
       {posts.map(({ node }) => {
         const title = node.frontmatter.title || node.frontmatter.slug
         return (
-          <article
-            key={node.frontmatter.slug}
-            itemScope
-            itemType="http://schema.org/Article"
-          >
+          <article key={node.frontmatter.slug} className="prose lg:prose-lg">
             <header>
-              <h2 className="text-2xl font-bold mb-3">
+              <h2>
                 <Link to={node.frontmatter.slug}>{title}</Link>
               </h2>
-              <time
-                className="flex max-content items-center bg-gray-200 border-l-4 border-teal-500 pl-2 pr-3 py-1 mr-4 mb-4 text-sm text-gray-700"
+              {/* <time
+                className="italic"
                 datetime={node.frontmatter.datePublished}
               >
-                <CalendarIcon width="1rem" height="1rem" className="mr-2" />
-                <span className="text-sm">
-                  {getFormattedDate(node.frontmatter.datePublished)}
-                </span>
-              </time>
+                {getFormattedDate(node.frontmatter.datePublished)}
+              </time> */}
             </header>
             <section>
-              <p
-                dangerouslySetInnerHTML={{
-                  __html: node.frontmatter.description || node.excerpt,
-                }}
-              />
+              <p>
+                <span
+                  dangerouslySetInnerHTML={{
+                    __html: node.excerpt,
+                  }}
+                />
+                <span>
+                  {` `}
+                  <Link to={node.frontmatter.slug}>Read more</Link>
+                </span>
+              </p>
             </section>
           </article>
         )
@@ -62,7 +61,7 @@ export const pageQuery = graphql`
     ) {
       edges {
         node {
-          excerpt
+          excerpt(pruneLength: 230)
           frontmatter {
             slug
             title
