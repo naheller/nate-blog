@@ -37,7 +37,7 @@ const BlogPostTemplate = ({ data, /* pageContext, */ location }) => {
         datePublished={datePublished}
         dateModified={dateModified}
         description={description || post.excerpt}
-        headerImage={headerImage}
+        headerImage={headerImage || ""}
         slug={slug}
       />
       {/* <div
