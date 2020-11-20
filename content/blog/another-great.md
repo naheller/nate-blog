@@ -19,9 +19,13 @@ It uses a dictionary of *over 200 Latin words*, combined with a handful of model
 
 > It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
 
+Unordered list
+
 * apples
 * oranges
 * bananas
+
+Ordered list
 
 1. red
 2. blue
