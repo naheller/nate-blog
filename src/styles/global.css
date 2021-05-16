@@ -22,7 +22,7 @@ body,
 }
 
 a {
-  color: #38b2ac !important;
+  color: #3B82F6 !important;
   text-decoration: none !important;
 }
 
@@ -55,4 +55,8 @@ a:hover {
 
 pre {
   border-radius: 0;
+}
+
+.prose .avatar img {
+  margin-top: 0 !important;
 }

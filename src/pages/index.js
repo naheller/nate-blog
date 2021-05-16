@@ -1,17 +1,13 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 
-import CalendarIcon from "../components/icons/Calendar"
 import Layout from "../components/Layout"
-import { getFormattedDate } from "../utils/date"
 
 const BlogIndex = ({ data, location }) => {
-  const siteTitle = data.site.siteMetadata.title
   const posts = data.allMarkdownRemark.edges
 
   return (
-    <Layout location={location} title={siteTitle} className="blog-index">
-      {/* <Bio /> */}
+    <Layout location={location} className="blog-index">
       {posts.map(({ node }) => {
         const title = node.frontmatter.title || node.frontmatter.slug
         return (
@@ -20,12 +16,6 @@ const BlogIndex = ({ data, location }) => {
               <h2>
                 <Link to={node.frontmatter.slug}>{title}</Link>
               </h2>
-              {/* <time
-                className="italic"
-                datetime={node.frontmatter.datePublished}
-              >
-                {getFormattedDate(node.frontmatter.datePublished)}
-              </time> */}
             </header>
             <section>
               <p>
@@ -36,10 +26,11 @@ const BlogIndex = ({ data, location }) => {
                 />
                 <span>
                   {` `}
-                  <Link to={node.frontmatter.slug}>Read more</Link>
+                  <Link to={node.frontmatter.slug}>read more</Link>
                 </span>
               </p>
             </section>
+            <hr />
           </article>
         )
       })}

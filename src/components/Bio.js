@@ -7,7 +7,7 @@ const Bio = () => {
     query BioQuery {
       avatar: file(absolutePath: { regex: "/profile-pic.jpg/" }) {
         childImageSharp {
-          fixed(width: 175, height: 175) {
+          fixed(width: 150, height: 150) {
             ...GatsbyImageSharpFixed
           }
         }
@@ -16,7 +16,6 @@ const Bio = () => {
         siteMetadata {
           author {
             name
-            summary
           }
           social {
             twitter
@@ -26,50 +25,34 @@ const Bio = () => {
     }
   `)
 
-  const { author /*, social*/ } = data.site.siteMetadata
+  const {
+    author,
+    social: { twitter },
+  } = data.site.siteMetadata
 
   return (
-    // <div className="px-6 py-5 rounded-lg text-gray-600 bg-gray-200">
-    <div className="flex flex-col sm:flex-row lg:flex-col px-6 py-5 border-l-4 border-teal-500 text-gray-700 bg-gray-200">
+    <div className="flex flex-col sm:flex-row items-center">
       <Image
         fixed={data.avatar.childImageSharp.fixed}
-        className="flex-shrink-0 border rounded-full mb-5 mx-auto sm:mb-0 lg:mb-5 lg:mx-auto"
-        style={{ display: "block" }}
+        className="flex-shrink-0 rounded-full sm:mr-8 border avatar"
         alt={author.name}
       />
-      <div className="flex flex-col justify-center text-sm sm:text-base lg:text-sm sm:mx-10 lg:mx-0">
-        <p className="mb-2">
-          I'm Nate, a software engineer living in New York City.
-        </p>
-        <p>
-          This blog explores topics in web development and tech culture. I hope
-          you find something that interests you!
-        </p>
-      </div>
+      <p className="italic text-gray-500 text-center sm:text-left">
+        I'm Nathan Heller, a software engineer based in New York City. This blog
+        explores topics in web development and tech culture. Follow me{" "}
+        {
+          <a
+            href={`https://twitter.com/${twitter}`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            @{twitter}
+          </a>
+        }{" "}
+        for a limitless supply of way less useful information.
+      </p>
     </div>
   )
-
-  // return (
-  //   <div>
-  //     <Image
-  //       fixed={data.avatar.childImageSharp.fixed}
-  //       className="rounded-full"
-  //       alt={author.name}
-  //     />
-  //     <p>
-  //       Written by{" "}
-  //       <strong>
-  //         <a
-  //           href={`https://twitter.com/${social.twitter}`}
-  //           target="_blank"
-  //           rel="noreferrer"
-  //         >
-  //           {author.name}
-  //         </a>
-  //       </strong>
-  //     </p>
-  //   </div>
-  // )
 }
 
 export default Bio

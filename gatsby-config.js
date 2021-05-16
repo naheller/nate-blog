@@ -2,15 +2,14 @@ require("dotenv").config()
 
 module.exports = {
   siteMetadata: {
-    title: `Nate.js`,
+    title: `Nathan Heller`,
     author: {
       name: `Nathan Heller`,
-      summary: `I'm a UI Engineer based in New York City.`,
     },
-    description: `Nathan Heller's personal site and blog.`,
+    description: `Nathan Heller's personal web site and blog.`,
     siteUrl: `https://natejs.com/`,
     social: {
-      twitter: `@natexyz`,
+      twitter: `natejsx`,
     },
   },
   plugins: [
