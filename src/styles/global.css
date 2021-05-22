@@ -22,7 +22,7 @@ body,
 }
 
 a {
-  color: #3B82F6 !important;
+  color: rgb(59, 130, 246) !important;
   text-decoration: none !important;
 }
 
@@ -32,7 +32,10 @@ h2 > a {
 
 a:hover {
   text-decoration: underline !important;
-  filter: brightness(90%);
+}
+
+.header-logo-link:hover .dot-tech {
+  color: rgb(59, 130, 246);
 }
 
 .main-wrapper {
@@ -58,5 +61,5 @@ pre {
 }
 
 .prose .avatar img {
-  margin-top: 0 !important;
+  margin: 0 !important;
 }
