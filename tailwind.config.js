@@ -3,10 +3,13 @@ module.exports = {
     removeDeprecatedGapUtilities: true,
     purgeLayersByDefault: true,
   },
-  // purge: {
-  //   mode: "all",
-  //   content: ["./src/**/*.html", "./src/**/*.js"],
-  // },
+  purge: {
+    // mode: "all",
+    content: ["./src/**/*.html", "./src/**/*.js"],
+    // options: {
+    //   safelist: ['token']
+    // }
+  },
   theme: {
     fontFamily: {
       serif: ["Vollkorn", "Georgia", "serif"],
