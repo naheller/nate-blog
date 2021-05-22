@@ -3,13 +3,13 @@ module.exports = {
     removeDeprecatedGapUtilities: true,
     purgeLayersByDefault: true,
   },
-  purge: {
-    mode: "all",
-    content: ["./src/**/*.html", "./src/**/*.js"],
-  },
+  // purge: {
+  //   mode: "all",
+  //   content: ["./src/**/*.html", "./src/**/*.js"],
+  // },
   theme: {
     fontFamily: {
-      'serif': ["Vollkorn", "Georgia", "serif"],
+      serif: ["Vollkorn", "Georgia", "serif"],
     },
     extend: {},
   },
