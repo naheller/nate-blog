@@ -4,11 +4,7 @@ module.exports = {
     purgeLayersByDefault: true,
   },
   purge: {
-    // mode: "all",
     content: ["./src/**/*.html", "./src/**/*.js"],
-    // options: {
-    //   safelist: ['token']
-    // }
   },
   theme: {
     fontFamily: {

@@ -56,10 +56,6 @@ a:hover {
   max-width: none;
 }
 
-pre {
-  border-radius: 0;
-}
-
 .prose .avatar img {
   margin: 0 !important;
 }
