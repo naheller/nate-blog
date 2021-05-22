@@ -1,7 +1,7 @@
 ---
 title: Why You Should Visit Outer Space
 datePublished: 2020-09-18T01:51:14.653Z
-dateModified: 2020-09-18T01:51:14.653Z
+dateModified: 2021-05-22T16:42:18.660Z
 slug: why-visit-outer-space
 tags:
   - space
