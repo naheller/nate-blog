@@ -39,12 +39,21 @@ const BlogPostTemplate = ({ data, /* pageContext, */ location }) => {
         slug={slug}
       />
       <article className="prose lg:prose-xl">
-        <section>
+        <section className="font-sans italic">
           <h1>{title}</h1>
-          <time className="italic text-gray-500" datetime={datePublished}>
-            {getFormattedDate(datePublished)}
-          </time>
+          <p className="text-gray-500">
+            <span>by</span>
+            {` `}
+            <a href="#">Nathan Heller</a>
+            {` `}
+            <span>on</span>
+            {` `}
+            <time datetime={dateModified}>
+              {getFormattedDate(dateModified)}
+            </time>
+          </p>
         </section>
+        <hr style={{ margin: "2rem 0" }} />
         <section dangerouslySetInnerHTML={{ __html: updatedHtml }} />
         <hr />
         <aside>

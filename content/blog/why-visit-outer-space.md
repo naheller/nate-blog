@@ -17,7 +17,7 @@ Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, loo
 ```javascript
 const App = {
   title: 'My extremely long title that will probably overflow past the window and maybe cause an issue',
-  id: 123,
+  id: 1230,
   isGreat: true // highlight-line
 };
 ```

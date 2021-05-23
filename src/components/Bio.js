@@ -32,9 +32,10 @@ const Bio = () => {
         width={150}
         height={150}
       />
-      <p className="italic text-gray-500 text-center sm:text-left">
-        I'm Nathan Heller, a software engineer based in New York City. This blog
-        explores topics in web development and tech culture. Follow me{" "}
+      <p className="italic font-sans leading-normal text-gray-500 text-center sm:text-left">
+        I'm <a href="#">Nathan Heller</a>, a software engineer based in New York
+        City. This blog explores topics in web development and tech culture.
+        Follow me{" "}
         {
           <a
             href={`https://twitter.com/${twitter}`}

@@ -8,7 +8,7 @@ const Footer = () => {
       <div className="flex h-24 mx-auto items-center text-blue-500">
         <ArrowUpIcon className="h-5 w-5 mr-2" />
         <button
-          className="text-xl font-semibold hover:underline"
+          className="text-xl font-sans font-semibold hover:underline"
           onClick={() => {
             window.scrollTo({
               top: 0,
@@ -16,7 +16,7 @@ const Footer = () => {
             })
           }}
         >
-          back to top
+          Back to top
         </button>
       </div>
     </footer>
