@@ -44,7 +44,7 @@ const BlogPostSEO = ({
     "@type": "BlogPosting",
     mainEntityOfPage: `${PAGE_BASE_URL}${slug}`,
     headline: title,
-    image: addUrlOptimization(headerImage),
+    ...(headerImage && { image: addUrlOptimization(headerImage) }),
     datePublished,
     dateModified,
     author: {
@@ -88,10 +88,6 @@ const BlogPostSEO = ({
           content: `website`,
         },
         {
-          property: `og:image`,
-          content: addUrlOptimization(headerImage),
-        },
-        {
           name: `twitter:card`,
           content: `summary_large_image`,
         },
@@ -107,10 +103,18 @@ const BlogPostSEO = ({
           name: `twitter:description`,
           content: metaDescription,
         },
-        {
-          name: `twitter:image`,
-          content: addUrlOptimization(headerImage),
-        },
+        ...(headerImage
+          ? [
+              {
+                property: `og:image`,
+                content: addUrlOptimization(headerImage),
+              },
+              {
+                name: `twitter:image`,
+                content: addUrlOptimization(headerImage),
+              },
+            ]
+          : []),
       ].concat(meta)}
     >
       <link rel="canonical" href={`${PAGE_BASE_URL}${slug}/`} />

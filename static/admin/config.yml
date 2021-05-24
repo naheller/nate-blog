@@ -35,6 +35,7 @@ collections:
         }
       - { label: "Tags", label_singular: "Tag", name: "tags", widget: "list" }
       - { label: "Header Image", name: "headerImage", widget: "image", required: false }
+      - { label: "Header Image Alt Text", name: "headerImageAltText", widget: "string", required: false }
       - {
           label: "Description",
           name: "description",

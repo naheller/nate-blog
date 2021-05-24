@@ -22,6 +22,7 @@ const BlogPostTemplate = ({ data, /* pageContext, */ location }) => {
       description,
       slug,
       headerImage,
+      headerImageAltText,
       // tags,
     },
   } = post
@@ -35,12 +36,19 @@ const BlogPostTemplate = ({ data, /* pageContext, */ location }) => {
         datePublished={datePublished}
         dateModified={dateModified}
         description={description || post.excerpt}
-        headerImage={headerImage || ""}
+        headerImage={headerImage}
         slug={slug}
       />
       <article className="prose lg:prose-xl">
         <section className="font-sans italic">
           <h1>{title}</h1>
+          {headerImage && (
+            <img
+              src={headerImage}
+              className="w-full"
+              alt={headerImageAltText || ""}
+            />
+          )}
           <p className="text-gray-500">
             <span>by</span>
             {` `}
@@ -83,6 +91,7 @@ export const pageQuery = graphql`
         datePublished
         dateModified
         headerImage
+        headerImageAltText
         description
         slug
         tags

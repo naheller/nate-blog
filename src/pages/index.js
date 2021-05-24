@@ -17,19 +17,17 @@ const BlogIndex = ({ data, location }) => {
                 <Link to={node.frontmatter.slug}>{title}</Link>
               </h2>
             </header>
-            <section>
-              <p>
-                <span
-                  dangerouslySetInnerHTML={{
-                    __html: node.excerpt,
-                  }}
-                />
-                <span>
-                  {` `}
-                  <Link to={node.frontmatter.slug}>read more</Link>
-                </span>
-              </p>
-            </section>
+            <p>
+              <span
+                dangerouslySetInnerHTML={{
+                  __html: node.excerpt,
+                }}
+              />
+              <span>
+                {` `}
+                <Link to={node.frontmatter.slug}>read more</Link>
+              </span>
+            </p>
             <hr />
           </article>
         )

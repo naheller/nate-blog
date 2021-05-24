@@ -8,6 +8,7 @@ tags:
   - travel
   - tourism
 headerImage: https://res.cloudinary.com/nate-blog/image/upload/v1600394021/carina-nebula.jpg
+headerImageAltText: Carina Nebula
 description: Outer space is great, and you should travel there. Here are a few reasons why.
 ---
 Contrary to popular belief, Lorem Ipsum is not simply `random text`. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.
