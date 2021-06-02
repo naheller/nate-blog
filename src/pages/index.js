@@ -13,7 +13,7 @@ const BlogIndex = ({ data, location }) => {
         return (
           <article key={node.frontmatter.slug} className="prose lg:prose-lg">
             <header>
-              <h2 className="font-sans font-semibold italic">
+              <h2 className="font-title font-semibold italic">
                 <Link to={node.frontmatter.slug}>{title}</Link>
               </h2>
             </header>

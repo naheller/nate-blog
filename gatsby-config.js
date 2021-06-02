@@ -7,7 +7,7 @@ module.exports = {
       name: `Nathan Heller`,
     },
     description: `Nathan Heller's personal web site and blog.`,
-    siteUrl: `https://natejs.com/`,
+    siteUrl: `https://nathanheller.tech/`,
     social: {
       twitter: `natejsx`,
     },

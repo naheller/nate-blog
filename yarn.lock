@@ -1250,15 +1250,10 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
-"@fontsource/lora@^4.3.0":
-  version "4.3.0"
-  resolved "https://registry.yarnpkg.com/@fontsource/lora/-/lora-4.3.0.tgz#899a20d55fa0769ed612803dfaf9a1783e70d4a5"
-  integrity sha512-LTjsnuxO3gLw0GmevbXO3ZqB7sof42DH93EZfaBVaIXx4MGpUsJyXgaSK+YQiWZIZfoP2dn6r1HB/1NGApoSKQ==
-
-"@fontsource/martel@^4.3.0":
-  version "4.3.0"
-  resolved "https://registry.yarnpkg.com/@fontsource/martel/-/martel-4.3.0.tgz#886c9b791fb0c40dd3e5da679f8df70245c2ea66"
-  integrity sha512-c5ScbgyK6wQMfESModnqaqbWbLDUnlUeoZBeeFkTtAZ66tQsXR7tnQlpI0n4xp2gB7UVB0xi+anrvwk9akTEAQ==
+"@fontsource/lato@^4.4.1":
+  version "4.4.1"
+  resolved "https://registry.yarnpkg.com/@fontsource/lato/-/lato-4.4.1.tgz#c197d74dfa9de5fda4998e7b24d7dab9839cbf7e"
+  integrity sha512-/AQI1hnl/key/lGYtltS5b9LDh1EyqMen41/16Zh4fYzcRCTyW4msFMbr3/p9h2qDchLA/aF4eHE2JBS8xuViA==
 
 "@fontsource/rajdhani@^4.3.0":
   version "4.3.0"

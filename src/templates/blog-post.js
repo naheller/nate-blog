@@ -40,7 +40,7 @@ const BlogPostTemplate = ({ data, /* pageContext, */ location }) => {
         slug={slug}
       />
       <article className="prose lg:prose-xl">
-        <section className="font-sans italic">
+        <section className="font-title italic">
           <h1>{title}</h1>
           {headerImage && (
             <img

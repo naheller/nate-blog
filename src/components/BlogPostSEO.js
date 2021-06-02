@@ -4,7 +4,7 @@ import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 import { addUrlOptimization } from "../utils/cloudinary"
 
-const PAGE_BASE_URL = "https://natejs.com/"
+const PAGE_BASE_URL = "https://nathanheller.tech/"
 const AUTHOR_IMAGE_URL =
   "https://res.cloudinary.com/nate-blog/image/upload/v1600488872/nate_ckldzj.jpg"
 

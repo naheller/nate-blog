@@ -8,8 +8,8 @@ module.exports = {
   },
   theme: {
     fontFamily: {
-      serif: ["Martel", "Georgia", "serif"],
-      sans: ["Rajdhani", "Helvetica", "sans-serif"],
+      sans: ["Lato", "Helvetica", "sans-serif"],
+      title: ["Rajdhani", "Helvetica", "sans-serif"],
     },
     extend: {},
   },

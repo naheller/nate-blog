@@ -10,7 +10,7 @@ const Header = () => {
         <BoltIcon className="h-5 w-5 mr-2" />
         <Link
           to="/"
-          className="text-xl lg:text-2xl font-sans font-semibold header-logo-link"
+          className="text-xl lg:text-2xl font-title font-semibold header-logo-link"
         >
           <span>nathanheller</span>
           <span className="text-gray-400 dot-tech">.tech</span>
